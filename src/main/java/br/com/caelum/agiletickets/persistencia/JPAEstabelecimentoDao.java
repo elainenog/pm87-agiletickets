@@ -15,8 +15,6 @@ public class JPAEstabelecimentoDao implements DiretorioDeEstabelecimentos {
 	
 	public JPAEstabelecimentoDao(EntityManager manager) {
 		this.manager = manager;
-		
-		
 	}
 
 	@Override
