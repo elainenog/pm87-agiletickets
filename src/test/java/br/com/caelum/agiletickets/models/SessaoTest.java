@@ -22,7 +22,7 @@ public class SessaoTest {
 	}
 
 	@Test
-	public void naoDeveVender2ingressoSeHa2vagas() throws Exception {
+	public void deveVender2ingressoSeHa2vagas() throws Exception {
 		Sessao sessao = new Sessao();
 		sessao.setTotalIngressos(2);
 
@@ -35,6 +35,19 @@ public class SessaoTest {
 		sessao.setTotalIngressos(2);
 
 		Assert.assertFalse(sessao.podeReservar(3));
+	}
+	
+	@Test
+	public void naoDeveVender3ingressoSeNaoHaVagas() throws Exception {
+		//Prepara o contexto
+		Sessao sessao = new Sessao();
+		sessao.setTotalIngressos(0);
+		
+		// Executa a acao
+		boolean reservou = sessao.podeReservar(3);
+		
+		// verificacao
+		Assert.assertFalse("vende ingressos se nao ha vagas",reservou);
 	}
 
 	@Test
