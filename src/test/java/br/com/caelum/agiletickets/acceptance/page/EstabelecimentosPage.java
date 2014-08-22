@@ -62,5 +62,6 @@ public class EstabelecimentosPage {
 		WebElement ultimaLinha = linhas.get(linhas.size() - 1);
 		return ultimaLinha;
 	}
+	
 
 }
